@@ -34,12 +34,11 @@ class PositiveNumbers:
         else:
             raise ValueError("Please input positive number.")
         
-positive_numbers = PositiveNumbers()
 
 def return_number(number):
-    result = positive_numbers(number)
+    functor = PositiveNumbers()
+    result = functor(number)
     print(result)
-    return result
 
 try:
     return_number(5)
