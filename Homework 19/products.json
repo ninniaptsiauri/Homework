@@ -1,0 +1,37 @@
+[
+    {
+        "name": "Phone",
+        "price": 61,
+        "quantity": 10
+    },
+    {
+        "name": "Laptop",
+        "price": 31,
+        "quantity": 7
+    },
+    {
+        "name": "Watch",
+        "price": 59,
+        "quantity": 9
+    },
+    {
+        "name": "Scroll",
+        "price": 28,
+        "quantity": 10
+    },
+    {
+        "name": "Tablet",
+        "price": 85,
+        "quantity": 5
+    },
+    {
+        "name": "Speaker",
+        "price": 48,
+        "quantity": 10
+    },
+    {
+        "name": "Headphones",
+        "price": 10,
+        "quantity": 3
+    }
+]
