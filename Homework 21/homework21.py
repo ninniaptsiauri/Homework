@@ -49,6 +49,7 @@ if __name__ == "__main__":
 # Number 2
 
 from queue import Queue
+import time
 
 def queue_threads(task_queue):
     while True:
@@ -59,7 +60,8 @@ def queue_threads(task_queue):
         thread_name = threading.current_thread().name
         is_even = "even" if task % 2 == 0 else "odd"
         print(f'{thread_name}: processed number {task}, is {is_even}.')
-
+        
+        time.sleep(2)
         task_queue.task_done()
 
 
