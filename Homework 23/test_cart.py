@@ -13,8 +13,18 @@ class TestShoppingCart(unittest.TestCase):
         self.assertEqual(self.cart.items[0]['price'], 10)
         self.assertEqual(self.cart.items[0]['quantity'], 5)
 
+
+
+    def test_add_item_zero_quantity(self):
         with self.assertRaises(ValueError) as context:
             self.cart.add_item('Notebook', 10, 0)
+        self.assertEqual(str(context.exception), "Quantity must be greater than 0")
+
+
+
+    def test_negative_quantity(self):
+        with self.assertRaises(ValueError) as context:
+            self.cart.add_item('Notebook', 10, -2)
         self.assertEqual(str(context.exception), "Quantity must be greater than 0")
 
 
@@ -25,7 +35,7 @@ class TestShoppingCart(unittest.TestCase):
         total = self.cart.total_price()
         self.assertEqual(total, 75)
 
-    
+
 
     def test_remove_item(self):
         self.cart.add_item('Notebook', 10, 5)
@@ -36,13 +46,6 @@ class TestShoppingCart(unittest.TestCase):
 
 
 
-    def test_is_empty(self):
-        self.assertTrue(self.cart.is_empty())
-        self.cart.add_item('Notebook', 10, 5)
-        self.assertFalse(self.cart.is_empty())
-
-
-
     def test_remove_nonexistent_item(self):
         self.cart.add_item('Notebook', 10, 5)
         self.cart.remove_item('Pen')
@@ -50,6 +53,11 @@ class TestShoppingCart(unittest.TestCase):
         self.assertEqual(self.cart.items[0]['name'], 'Notebook')
 
 
+
+    def test_is_empty(self):
+        self.assertTrue(self.cart.is_empty())
+        self.cart.add_item('Notebook', 10, 5)
+        self.assertFalse(self.cart.is_empty())
 
 
 
